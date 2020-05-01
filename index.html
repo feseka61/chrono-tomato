@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Tomatometer</title>
+</head>
+<body>
+    <div class="header">
+        <h1>POMODORO</h1>
+    </div>
+    <div class="main">
+        <p id="state">"START" to FOCUS</p>
+        <div class="timer">
+            <p id="time"></p>
+        </div>
+        <div class="buttons">
+            <button class="timerbuttons" id="startpause"><img class="timerButton" id="strtimg" src="pictures/play.png" alt=""></button>
+            <button class="timerbuttons" id="reset"><img class="timerButton" id="rstimg" src="pictures/reset.png" alt=""></button>
+        </div>
+    </div>
+    <div class="settingsAndInfo">
+        <button class="setAndInfoButton" id="info"><img class="setAndInfoButton" id="infoimg" src="pictures/infoinactive.png" alt=""></button>
+        <button class="setAndInfoButton" id="settings"><img class="setAndInfoButton" id="settingsimg" src="pictures/settingsinactive.png" alt=""></button>
+    </div>
+    <div class="settings">
+        <h2>Settings</h2>
+        <button>deneme</button>
+        <button>deneme2</button>
+    </div>
+    <div class="info">
+        <h2>What is Pomodoro?</h2>
+        <p>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s.</p>
+        <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Learn more about Pomodoro</a>
+        <h3>How Pomodoro Works?</h3>
+        <ul>
+            <li>Decide on the task to be done.</li>
+            <li>Start the pomodoro timer.</li>
+            <li>Focus on the task.</li>
+            <li>1 Pomodoro is completed, when the timer expires.</li>
+            <li>After each pomodoro completed, take a short break.</li>
+            <li>When 4 pomodoros completed, take a long break.</li>
+            <li>Complete pomodoros as you need!</li>
+        </ul>
+    </div>
+    <div class="pomodoroCounter">
+        <h2>Tomato Stats</h2>
+        <p>0 pomodoros completed</p>
+        <p>0 long breaks taken</p>
+    </div>
+    <div class="footer">
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
