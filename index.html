@@ -7,6 +7,7 @@
     <title>Tomatometer</title>
 </head>
 <body>
+    <audio id="gong" src="audios/gong.mp3"></audio>
     <div class="header">
         <h1>POMODORO</h1>
     </div>
@@ -26,8 +27,18 @@
     </div>
     <div class="settings">
         <h2>Settings</h2>
-        <button>deneme</button>
-        <button>deneme2</button>
+        <label class="settings" for="workMinutes">Session Time:</label>
+        <input class="settings" type="number" id="workMinutes" name="workMinutes" min="1" max="60" value="25">
+
+        <label class="settings" for="restMinutes">Break Time:</label>
+        <input class="settings" type="number" id="restMinutes" name="restMinutes" min="1" max="60" value="5">
+
+        <label class="settings" for="longRestMinutes">Long Break Time:</label>
+        <input class="settings" type="number" id="longRestMinutes" name="longRestMinutes" min="1" max="60" value="30">
+
+        <button id="applyButton">Apply</button>
+
+        <p>Note: Applying will reset the timer(not stats)</p>
     </div>
     <div class="info">
         <h2>What is Pomodoro?</h2>

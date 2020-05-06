@@ -23,7 +23,7 @@ div.settings {
     top: 70px;
     left: 100px;
     width: 250px;
-    height: 400px;
+    height: 250px;
     border: solid;
     text-align: center;
     visibility: hidden;
@@ -136,4 +136,21 @@ button.setAndInfoButton {
 .pomodoroCounter p {
     padding-left: 5px;
     padding-right: 10px;
+}
+
+input.settings {
+    display: inline-block;
+    width: 14%;
+    margin-bottom: 15px;
+}
+
+label.settings {
+    display: inline-block;
+    width: 76%;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.settings p {
+    font-size: 11px;
 }

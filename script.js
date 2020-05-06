@@ -43,6 +43,7 @@ function timer() {
 
     if (currentWorkState == 'working') {
         if (seconds == 0 & minutes == 0) {
+            gong.play()
             switch (workTimes) {
                 case 3:
                     workTimes = 0;
@@ -66,6 +67,7 @@ function timer() {
         };
     } else {
         if (seconds == 0 & minutes == 0) {
+            gong.play()
             minutes = focusMin;
             seconds = 0;
             currentWorkState = 'working'
@@ -74,12 +76,39 @@ function timer() {
     };
 };
 
+function setTimer() {
+    focusMin = document.getElementById('workMinutes').value;
+    restMin = document.getElementById('restMinutes').value;
+    longRestMin = document.getElementById('longRestMinutes').value;
+};
+
+function resetter() {
+    setTimer();
+
+    minutes = focusMin;
+    seconds = 0;
+    tomatime.textContent = convert2digits(minutes) + ':' + convert2digits(seconds);
+
+    totalMinutes = 0;
+    totalSeconds = 0;
+
+    workHours = 0;
+    workMinutes = 0;
+    workSeconds = 0;
+
+    pomodoros = 0;
+    longBreaks = 0;
+
+    pomodorosPara.textContent = pomodoros + " pomodoros completed";
+    longBreaksPara.textContent = longBreaks + " long breaks taken";
+    totalWorkTimePara.textContent = convert2digits(workHours) + ":" + convert2digits(workMinutes) + ":" + convert2digits(workSeconds);
+};
 
 /*.............................................................................................................*/
 
-let focusMin = 25;
-let restMin = 5;
-let longRestMin = 30;
+let focusMin = document.getElementById('workMinutes').value;
+let restMin = document.getElementById('restMinutes').value;
+let longRestMin = document.getElementById('longRestMinutes').value;
 
 let totalMinutes = 0;
 let totalSeconds = 0;
@@ -94,6 +123,8 @@ let longBreaks = 0;
 let pomodorosPara = document.getElementById("pomodoros");
 let longBreaksPara = document.getElementById("longBreaks");
 let totalWorkTimePara = document.getElementById("totalWorkTime");
+
+let gong = document.getElementById('gong');
 
 pomodorosPara.textContent = pomodoros + " pomodoros completed";
 longBreaksPara.textContent = longBreaks + " long breaks taken";
@@ -129,7 +160,7 @@ startButton.addEventListener('click', (e) => {
         document.getElementById('strtimg').src = 'pictures/pause.png';
         buttonState = 'pause';
         window.timing = timer();
-        window.timing = setInterval(timer, 10);
+        window.timing = setInterval(timer, 1000);
     } else {
         document.getElementById('strtimg').src = 'pictures/play.png';
         buttonState = 'start';
@@ -139,9 +170,7 @@ startButton.addEventListener('click', (e) => {
 
 let resetButton = document.getElementById('reset');
 
-resetButton.addEventListener('click', (e) => {
-    location.reload();
-});
+resetButton.addEventListener('click',resetter);
 
 let infoButton = document.getElementById('info');
 
@@ -181,4 +210,14 @@ settingsButton.addEventListener('click', (e) => {
             document.getElementById('infoimg').src = 'pictures/infoinactive.png';
             break;
     };
+});
+
+let applyButton = document.getElementById('applyButton')
+
+applyButton.addEventListener('click', (e) => {
+    setTimer();
+
+    minutes = focusMin;
+    seconds = 0;
+    tomatime.textContent = convert2digits(minutes) + ':' + convert2digits(seconds);    
 });
