@@ -85,6 +85,10 @@ function setTimer() {
 function resetter() {
     setTimer();
 
+    clearInterval(timing);
+    document.getElementById('strtimg').src = 'pictures/play.png';
+    buttonState = 'start';
+
     minutes = focusMin;
     seconds = 0;
     tomatime.textContent = convert2digits(minutes) + ':' + convert2digits(seconds);
